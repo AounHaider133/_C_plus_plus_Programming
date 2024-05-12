@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a;
+    char choice = 'y';
+    do
+    {
+        do
+        {
+            cout<<"\nEnter a: ";
+            cin >> a; // input a positive integer greater than 1
+        } while(a<1);
+        cout<<"The magic sequence for "<<a<<" is: ";
+        while(a!=1)
+        {
+            if(a%2==0)
+                a = a/2;
+            else
+                a = 3*a+1;
+            cout<<a<< " ";
+        }
+        cout<<endl<<"Do you want to continue? \n(n to exit, any other character to continue): ";
+        cin>>choice;
+    }while(choice!='n');
+    return 0;
+}

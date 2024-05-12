@@ -1,0 +1,39 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+void addtime(int &hours, int &minutes, int Addmin)
+{
+    minutes = Addmin+minutes;
+
+    int addhours = minutes/60;
+    minutes = minutes%60;
+
+    hours = addhours+hours;
+    //hours%=24;
+}
+
+int main ()
+{
+    int h , m , addMin;
+     for(int i=0;i<3;i++)
+    {
+        do
+        {
+            cout<<"Enter current time hours (0-23): ";
+            cin>>h;
+        }while(h<0 || h>23);
+
+        do
+        {
+            cout<<"Enter current time minutes (0-59): ";
+            cin>>m;
+        }while(m<0 || m>59);
+
+        cout<<"Enter time to add: ";
+        cin>>addMin;
+        addtime(h, m, addMin);
+
+        cout<<"Time is "<<setw(2)<<setfill('0')<<h<<":"<<setw(2)<<setfill('0')<<m<<endl;
+    }
+    return 0;
+}

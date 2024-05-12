@@ -1,0 +1,34 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+    int max_marks, sum = 0, obtained_marks, num_subjects=0;
+    float average = 0.0;
+
+    do
+    {
+        cout<<"Enter Max Marks [1-100]: ";
+        cin>>max_marks;
+    } while(max_marks<1 || max_marks>100);
+
+    cout<<"Input obtained Marks [-1 to exit]: ";
+    cin>>obtained_marks;
+    while(obtained_marks!=-1 )
+    {
+        sum = sum+obtained_marks;
+        num_subjects++;
+        cout<<"Input obtained Marks [-1 to exit]: ";
+        cin>>obtained_marks;
+    }
+
+    if(num_subjects>0)
+        cout<<"Percentage: "<<fixed<<setprecision(2)<<((double)sum)/(num_subjects*max_marks)*100<<"%";
+    else
+        cout<<"obtained marks not entered";
+
+//5-6+1.4+51
+
+}
+
